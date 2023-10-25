@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
+  name: "wolffy的空间站"
+  text: "记录所思所想"
   tagline: My great project tagline
   actions:
     - theme: brand
       text: Markdown Examples
-      link: /markdown-examples
+      link: /css/jiqiao
     - theme: alt
       text: API Examples
-      link: /api-examples
+      link: /js/jicheng.md
 
 features:
   - title: Feature A
