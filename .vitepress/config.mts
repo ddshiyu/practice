@@ -20,6 +20,7 @@ export default defineConfig({
         items: [
           { text: '读css世界', link: '/css/yuedu' },
           { text: 'css技巧', link: '/css/jiqiao' },
+          { text: 'svg', link: '/css/svg' },
         ]
       }],
       "/js/": [{
@@ -34,6 +35,7 @@ export default defineConfig({
         items: [
           { text: 'vite相关配置', link: '/tools/index.md' },
           { text: 'npm相关', link: '/tools/npm.md' },
+          { text: '解决github copilot不生效的办法', link: '/tools/copilot.md' },
         ]
       }],
       "/java/": [{
