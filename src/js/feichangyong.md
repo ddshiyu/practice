@@ -46,3 +46,7 @@ if (navigator.clipboard) {
   document.body.removeChild(textarea)
 }
 ```
+
+##  三、Ajax传递JSON数据
+1. contentType设置为 application/json
+2. data使用JSON.stringify()包裹

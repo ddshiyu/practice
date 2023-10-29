@@ -280,3 +280,27 @@ enum Priority {
   '低': 3
 }
 ```
+
+
+## 十一、经验技巧
+#### （1）定时器用什么类型
+一般可以定义为number类型，但是在使用的时候还是会报出警告，可以使用如下方式
+
+1. 使用window.setInterval
+2. Number(setInterval(()=>{// do something},1000));
+#### （2）Type ‘HTMLElement | null‘ is not assignable to type ‘HTMLElement‘
+解决方法：
+
+1. 禁用strict模式，tsconfig.ts，"strict": true,  ---> "strict": false
+2.  严格模式下，加个判断
+```
+let elem: HTMLElement;
+const temp = document.getElementById('someid');
+if (temp) {
+	elem = temp;
+   // ...
+}
+```
+
+3. 使用类型断言(Type Assertion)，const elem : HTMLElement = document.getElementById('someid') as HTMLElement;
+

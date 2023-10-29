@@ -21,6 +21,7 @@ export default defineConfig({
       { text: 'JavaScript', link: '/js/jicheng.md' },
       { text: 'Tools', link: '/tools/index.md' },
       { text: 'Java', link: '/java/index.md' },
+      { text: '经验教训', link: '/keng/vue3.md' },
     ],
 
     sidebar: {
@@ -51,12 +52,21 @@ export default defineConfig({
           { text: 'github copilot', link: '/tools/copilot.md' },
           { text: 'editorConfig', link: '/tools/editorConfig.md' },
           { text: 'githubActions', link: '/tools/githubActions.md' },
+          { text: 'webviz', link: '/tools/webviz.md' },
         ]
       }],
       "/java/": [{
         text: 'Java',
         items: [
           { text: 'java基础', link: '/java/index.md' },
+        ]
+      }],
+      "/keng/": [{
+        text: '经验教训',
+        items: [
+          { text: 'vue3', link: '/keng/vue3.md' },
+          { text: '可视化方案', link: '/keng/didaima.md' },
+          { text: '部署上线', link: '/keng/shangxian.md' },
         ]
       }],
     },
