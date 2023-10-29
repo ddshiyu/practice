@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,Q as p}from"./chunks/framework.a4b38d58.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"css/jiqiao.md","filePath":"css/jiqiao.md"}'),l={name:"css/jiqiao.md"},o=p("",5),e=[o];function t(c,r,E,y,i,m){return a(),n("div",null,e)}const F=s(l,[["render",t]]);export{d as __pageData,F as default};

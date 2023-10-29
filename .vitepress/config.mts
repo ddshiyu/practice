@@ -5,8 +5,17 @@ export default defineConfig({
   title: "我的知识行囊",
   description: "A VitePress Site",
   base: '/practice/',
+  srcDir: './src',
+  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local'
+    },
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2019-present Wollfy Feng'
+    },
     nav: [
       { text: 'CSS', link: '/css/yuedu' },
       { text: 'JavaScript', link: '/js/jicheng.md' },
@@ -20,7 +29,7 @@ export default defineConfig({
         items: [
           { text: '读css世界', link: '/css/yuedu' },
           { text: 'css技巧', link: '/css/jiqiao' },
-          { text: 'svg', link: '/css/svg' },
+          { text: 'svg', link: '/css/index' },
         ]
       }],
       "/js/": [{
@@ -28,20 +37,26 @@ export default defineConfig({
         items: [
           { text: 'js继承', link: '/js/jicheng.md' },
           { text: 'TS相关', link: '/js/ts.md' },
+          { text: 'JS非常用方法', link: '/js/feichangyong.md' },
         ]
       }],
       "/tools/": [{
-        text: 'tools',
+        text: 'Tools',
         items: [
-          { text: 'vite相关配置', link: '/tools/index.md' },
-          { text: 'npm相关', link: '/tools/npm.md' },
-          { text: '解决github copilot不生效的办法', link: '/tools/copilot.md' },
+          { text: '软件工具集合', link: '/tools/software.md' },
+          { text: 'git', link: '/tools/git.md' },
+          { text: 'vitepress', link: '/tools/markdown-examples.md' },
+          { text: 'vite', link: '/tools/index.md' },
+          { text: 'npm', link: '/tools/npm.md' },
+          { text: 'github copilot', link: '/tools/copilot.md' },
+          { text: 'editorConfig', link: '/tools/editorConfig.md' },
+          { text: 'githubActions', link: '/tools/githubActions.md' },
         ]
       }],
       "/java/": [{
-        text: 'tools',
+        text: 'Java',
         items: [
-          { text: 'java学习', link: '/java/index.md' },
+          { text: 'java基础', link: '/java/index.md' },
         ]
       }],
     },
