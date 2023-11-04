@@ -53,6 +53,7 @@ export default defineConfig({
           { text: 'editorConfig', link: '/tools/editorConfig.md' },
           { text: 'githubActions', link: '/tools/githubActions.md' },
           { text: 'webviz', link: '/tools/webviz.md' },
+          { text: '图床', link: '/tools/tuchaung.md' },
         ]
       }],
       "/java/": [{
