@@ -22,6 +22,7 @@ export default defineConfig({
       { text: 'Tools', link: '/tools/index.md' },
       { text: 'Java', link: '/java/index.md' },
       { text: '经验教训', link: '/keng/vue3.md' },
+      { text: '英语', link: '/english/index.md' },
     ],
 
     sidebar: {
@@ -68,6 +69,14 @@ export default defineConfig({
           { text: 'vue3', link: '/keng/vue3.md' },
           { text: '可视化方案', link: '/keng/didaima.md' },
           { text: '部署上线', link: '/keng/shangxian.md' },
+        ]
+      }],
+      "/english/": [{
+        text: '英语',
+        items: [
+          { text: '前言', link: '/english/index.md' },
+          { text: '系动词', link: '/english/xidongci.md' },
+          { text: '使役动词', link: '/english/shiyidongci.md' },
         ]
       }],
     },
