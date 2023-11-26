@@ -77,6 +77,8 @@ export default defineConfig({
           { text: '前言', link: '/english/index.md' },
           { text: '系动词', link: '/english/xidongci.md' },
           { text: '使役动词', link: '/english/shiyidongci.md' },
+          { text: '冠词', link: '/english/guanci.md' },
+          { text: '介词', link: '/english/jieci.md' },
         ]
       }],
     },
