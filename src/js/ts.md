@@ -32,7 +32,7 @@ alert("card: " + pickedCard.card + " of " + pickedCard.suit);
 ```
 现在TypeScript知道createCardPicker期望在某个Deck对象上调用。 也就是说this是Deck类型的，而非any，因此--noImplicitThis不会报错了。
 ## 二、泛型
-#### 2.1 泛型接口
+### 2.1 泛型接口
 ```typescript
 interface GenericIdentityFn<T> {
     (arg: T): T;
@@ -44,7 +44,7 @@ function identity<T>(arg: T): T {
 
 let myIdentity: GenericIdentityFn<number> = identity;
 ```
-#### 2.2 泛型约束
+### 2.2 泛型约束
 ```typescript
 interface Lengthwise {
     length: number;
@@ -58,7 +58,7 @@ loggingIdentity(3);  // Error, number doesn't have a .length property
 loggingIdentity({length: 10, value: 3});
 ```
 可以说是继承，我们需要传入符合约束类型的值，必须包含必须的属性。
-#### 2.3 在泛型约束中使用类型参数
+### 2.3 在泛型约束中使用类型参数
 声明一个类型参数，且它被另一个类型参数所约束，并且确保这个属性存在于对象obj上。
 ```typescript
 function getProperty<T, K extends keyof T>(obj: T, key: K) {
@@ -71,7 +71,7 @@ getProperty(x, "a"); // okay
 getProperty(x, "m"); // error: Argument of type 'm' isn't assignable to 'a' | 'b' | 'c' | 'd'.
 ```
 ## 三、类型推论
-#### 3.1 上下文类型
+### 3.1 上下文类型
 ```typescript
 window.onmousedown = function(mouseEvent) {
     console.log(mouseEvent.button);  //<- Error
@@ -85,20 +85,20 @@ window.onmousedown = function(mouseEvent: any) {
 ```
 这个函数表达式有明确的参数类型注解，上下文类型被忽略。 这样的话就不报错了，因为这里不会使用到上下文类型。
 ## 四、.d.ts文件
-#### 4.1 什么是 .d.ts文件
+### 4.1 什么是 .d.ts文件
 .d.ts文件与.ts文件一样，都是用来声明变量、type、interface等，但是.d.ts文件可以在全局访问，前提是把这个文件放入tsconfig.json文件中include配置中。
 .d.ts文件也一般用于第三方库变量的声明
 ## 五、declare
 .d.ts 文件中的顶级声明必须以 "declare" 或 "export" 修饰符开头。
 通过declare声明的类型或者变量或者模块，在include包含的文件范围内，都可以直接引用而不用去import或者import type相应的变量或者类型。
-#### 5.1 declare声明一个类型
+### 5.1 declare声明一个类型
 ```typescript
 declare type Asd {
     name: string;
 }
 ```
 在include包含的文件范围内可以直接使用Asd这个type
-#### 5.2 declare声明一个模块
+### 5.2 declare声明一个模块
 最经典的声明模块应该是这样了
 ```typescript
 declare module '*.css';
@@ -106,17 +106,17 @@ declare module '*.less';
 declare module '*.png';
 ```
 在编辑ts文件的时候，如果你想导入一个.css/.less/.png格式的文件，如果没有经过declare的话是会提示语法错误的
-#### 5.3 declare声明一个变量
+### 5.3 declare声明一个变量
 这个什么情况下会用到呢？假如我在项目中引入了一个sdk，这个sdk（我们以微信的sdk为例）里面有一些全局的对象（比如wx），但是如果不经过任何的声明，在ts文件里面直接用wx.config()的话，肯定会报错。
 有一句说法我蛮喜欢的：declare就是告诉TS编译器你担保这些变量和模块存在，并声明了相应类型，编译的时候不需要提示错误！
-#### 5.4 declare声明一个作用域
+### 5.4 declare声明一个作用域
 ```typescript
 declare namespace API {
   interface ResponseList {}
 }
 ```
 声明完之后在其他地方的ts就可以直接API.ResponseList引用到这个接口类型
-#### 5.5 注意
+### 5.5 注意
 
 1. d.ts文件顶级声明declare最好不要跟export同级使用，不然在其他ts引用这个.d.ts的内容的时候，就需要手动import导入了
 2. 在.d.ts文件里如果顶级声明不用export的话，declare和直接写type、interface效果是一样的，在其他地方都可以直接引用
@@ -129,7 +129,7 @@ type Bss = {
 };
 ```
 可以直接使用Ass和Bss作为某个变量的类型
-#### 5.6 兼容第三方js库
+### 5.6 兼容第三方js库
 一般放在.d.ts文件中，方便其他的文件也能引入。
 ```typescript
 declare module "test" {
@@ -183,7 +183,7 @@ pet.layEggs(); // okay
 pet.swim();    // errors
 ```
 ## 七、类型定义
-#### 1. 定义函数
+### 1. 定义函数
 ```css
 type fn = (a:number, b:number) => number
 ```
@@ -205,7 +205,7 @@ const person:Person = {
 person.sayHi('jack')
 sayHi.call(person, 'jack')
 ```
-#### unknow
+### unknow
 理解：可以定义任意类型，比如请求接口不确定类型，但是确定之后可以断言
 ```css
 const a:unknow = 1
@@ -213,7 +213,7 @@ const b = a as number
 (a as number).toFix()
 b.toFix()
 ```
-#### type & interface 函数对象有属性
+### type & interface 函数对象有属性
 ```css
 type fn {
   (a:number, b:number): number,
@@ -283,12 +283,12 @@ enum Priority {
 
 
 ## 十一、经验技巧
-#### （1）定时器用什么类型
+### （1）定时器用什么类型
 一般可以定义为number类型，但是在使用的时候还是会报出警告，可以使用如下方式
 
 1. 使用window.setInterval
 2. Number(setInterval(()=>{// do something},1000));
-#### （2）Type ‘HTMLElement | null‘ is not assignable to type ‘HTMLElement‘
+### （2）Type ‘HTMLElement | null‘ is not assignable to type ‘HTMLElement‘
 解决方法：
 
 1. 禁用strict模式，tsconfig.ts，"strict": true,  ---> "strict": false
