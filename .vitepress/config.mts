@@ -20,7 +20,7 @@ export default defineConfig({
       { text: 'CSS', link: '/css/yuedu' },
       { text: 'JavaScript', link: '/js/jicheng.md' },
       { text: 'Tools', link: '/tools/index.md' },
-      { text: 'Java', link: '/java/index.md' },
+      { text: '后端', link: '/backend/index.md' },
       { text: '经验教训', link: '/keng/vue3.md' },
     ],
 
@@ -55,10 +55,11 @@ export default defineConfig({
           { text: 'webviz', link: '/tools/webviz.md' },
         ]
       }],
-      "/java/": [{
-        text: 'Java',
+      "/backend/": [{
+        text: 'backend',
         items: [
-          { text: 'java基础', link: '/java/index.md' },
+          { text: 'java基础', link: '/backend/index.md' },
+          { text: 'Node.js', link: '/backend/node.md' },
         ]
       }],
       "/keng/": [{
