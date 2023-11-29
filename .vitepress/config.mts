@@ -22,6 +22,7 @@ export default defineConfig({
       { text: 'Tools', link: '/tools/index.md' },
       { text: '后端', link: '/backend/index.md' },
       { text: '经验教训', link: '/keng/vue3.md' },
+      { text: '英语', link: '/english/index.md' },
     ],
 
     sidebar: {
@@ -53,6 +54,7 @@ export default defineConfig({
           { text: 'editorConfig', link: '/tools/editorConfig.md' },
           { text: 'githubActions', link: '/tools/githubActions.md' },
           { text: 'webviz', link: '/tools/webviz.md' },
+          { text: '图床', link: '/tools/tuchaung.md' },
         ]
       }],
       "/backend/": [{
@@ -68,6 +70,18 @@ export default defineConfig({
           { text: 'vue3', link: '/keng/vue3.md' },
           { text: '可视化方案', link: '/keng/didaima.md' },
           { text: '部署上线', link: '/keng/shangxian.md' },
+        ]
+      }],
+      "/english/": [{
+        text: '英语',
+        items: [
+          { text: '前言', link: '/english/index.md' },
+          { text: '系动词', link: '/english/xidongci.md' },
+          { text: '使役动词', link: '/english/shiyidongci.md' },
+          { text: '冠词', link: '/english/guanci.md' },
+          { text: '介词', link: '/english/jieci.md' },
+          { text: '名词', link: '/english/mingci.md' },
+          { text: '构词', link: '/english/gouci.md' },
         ]
       }],
     },
