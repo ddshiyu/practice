@@ -1,6 +1,5 @@
 <template>
   <div><n-input /></div>
-  <n-date-picker></n-date-picker>
 </template>
 
 <script lang='ts' setup>
