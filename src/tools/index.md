@@ -46,3 +46,9 @@ VITE_APP_SERVER_URL = http://127.0.0.1:9999
   "build": "vite build"
 },
 ```
+
+<script setup>
+import test from '../test.vue'
+</script>
+
+<test />
