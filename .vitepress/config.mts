@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "我的知识行囊",
@@ -32,6 +31,7 @@ export default defineConfig({
           { text: '读css世界', link: '/css/yuedu' },
           { text: 'css技巧', link: '/css/jiqiao' },
           { text: 'svg', link: '/css/index' },
+          { text: '盒模型', link: '/css/hemoxing' },
         ]
       }],
       "/js/": [{
@@ -58,7 +58,7 @@ export default defineConfig({
         ]
       }],
       "/backend/": [{
-        text: 'backend',
+        text: '后端',
         items: [
           { text: 'java基础', link: '/backend/index.md' },
           { text: 'Node.js', link: '/backend/node.md' },
