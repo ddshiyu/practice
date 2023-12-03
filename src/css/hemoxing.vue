@@ -1,11 +1,14 @@
 <template>
-  <div class="a" :style="{padding: value+'px'}"></div>
+  <div class="bg-#000" :style="{padding: value+'px'}"></div>
   <div>
     <n-slider v-model:value="value" :step="1" />
   </div>
+  <span class="text-primary">123</span>
 </template>
 
 <script lang='ts' setup>
+// main.ts
+
 import { reactive, toRefs, onBeforeMount, onMounted, ref } from 'vue'
 const value = ref(0)
 

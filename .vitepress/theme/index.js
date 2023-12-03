@@ -1,5 +1,6 @@
 import DefaultTheme from "vitepress/theme";
 import naive from 'naive-ui'
+import 'virtual:uno.css'
 export default {
   ...DefaultTheme,
   enhanceApp: async ({ app, router, siteData }) => {

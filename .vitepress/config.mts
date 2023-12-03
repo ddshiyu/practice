@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import UnoCSS from 'unocss/vite'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "我的知识行囊",
@@ -6,11 +7,17 @@ export default defineConfig({
   base: '/practice/',
   srcDir: './src',
   lastUpdated: true,
+  vite: {
+    plugins: [
+      UnoCSS(),
+    ],
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     search: {
       provider: 'local'
     },
+    outline: 'deep',
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Wollfy Feng'

@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "naive-ui": "^2.35.0",
+    "unocss": "^0.57.7",
     "vitepress": "^1.0.0-rc.24"
   }
 }
