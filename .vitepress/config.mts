@@ -92,6 +92,7 @@ export default defineConfig({
           { text: '代词', link: '/english/daici.md' },
           { text: '数词', link: '/english/shuci.md' },
           { text: '连词', link: '/english/lianci.md' },
+          { text: '副词', link: '/english/fuci.md' },
         ]
       }],
     },
