@@ -89,6 +89,9 @@ export default defineConfig({
           { text: '介词', link: '/english/jieci.md' },
           { text: '名词', link: '/english/mingci.md' },
           { text: '构词', link: '/english/gouci.md' },
+          { text: '代词', link: '/english/daici.md' },
+          { text: '数词', link: '/english/shuci.md' },
+          { text: '连词', link: '/english/lianci.md' },
         ]
       }],
     },
