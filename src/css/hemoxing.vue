@@ -1,4 +1,7 @@
 <template>
+  <p>盒子分为块级盒子和内联盒子</p>
+  <li>内联盒子</li>
+  <p>123</p>
   <div class="bg-#000" :style="{padding: value+'px'}"></div>
   <div>
     <n-slider v-model:value="value" :step="1" />
