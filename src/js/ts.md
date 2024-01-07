@@ -293,7 +293,7 @@ enum Priority {
 
 1. 禁用strict模式，tsconfig.ts，"strict": true,  ---> "strict": false
 2.  严格模式下，加个判断
-```
+```javascript
 let elem: HTMLElement;
 const temp = document.getElementById('someid');
 if (temp) {
@@ -304,3 +304,44 @@ if (temp) {
 
 3. 使用类型断言(Type Assertion)，const elem : HTMLElement = document.getElementById('someid') as HTMLElement;
 
+### 一些场景
+```javascript
+const arr = [1, 2];
+
+function add(x:number, y:number){
+  // ...
+}
+
+add(...arr) // 报错
+```
+上面示例会报错，原因是函数add()只能接受两个参数，但是传入的是...arr，TypeScript 认为转换后的参数个数是不确定的。
+```javascript
+const arr:[number, number] = [1, 2];
+
+function add(x:number, y:number){
+  // ...
+}
+
+add(...arr) // 正确
+```
+上面示例中，arr是一个拥有两个成员的元组，所以 TypeScript 能够确定...arr可以匹配函数add()的参数数量，就不会报错了。
+
+- 多个同名的 Enum 结构会自动合并。
+- expr as T
+上面代码中，expr是实际的值，T是类型断言，它们必须满足下面的条件：expr是T的子类型，或者T是expr的子类型。
+
+// a1 的类型推断为 number[]
+const a1 = [1, 2, 3];
+
+// a2 的类型推断为 readonly [1, 2, 3]
+const a2 = [1, 2, 3] as const;
+上面示例中，数组字面量使用as const断言后，类型推断就变成了只读元组。
+
+function add(x:number, y:number) {
+  return x + y;
+}
+
+const nums = [1, 2];
+const total = add(...nums); // 报错
+const nums = [1, 2] as const;
+const total = add(...nums); // 正确
