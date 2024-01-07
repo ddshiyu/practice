@@ -147,6 +147,8 @@ import hemoxing from './hemoxing.vue'
 - 高度塌陷
 - 清楚浮动
 - 消除重叠
+
+<div class="codebox">
 <div class="flex justify-around">
   <div>
     <div class="boxes mb-30px"></div>
@@ -158,6 +160,26 @@ import hemoxing from './hemoxing.vue'
         <div class="boxes mt-30px"></div>
       </div>
     </div>
+</div>
+</div>
+<div class="codebox">
+  <div class="par block">
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+  <div class="par1 mt-100px">
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+</div>
+
+<div class="codebox">
+  <div class="aside"></div>
+  <div class="main"></div>
+
+  ---
+  <div class="aside"></div>
+  <div class="main overflow-hidden"></div>
 </div>
 
 <script lang='ts' setup>
@@ -204,6 +226,35 @@ const textarea = ref(
 .boxes {
   width: 100px;
   height: 100px;
-  background-color: red;
+  background-color: pink;
+}
+
+.par {
+  border: 5px solid #fcc;
+  width: 300px;
+}
+.par1 {
+  border: 5px solid #fcc;
+  width: 300px;
+  overflow: hidden;
+}
+
+.child {
+  border: 5px solid #f66;
+  width:100px;
+  height: 100px;
+  float: left;
+}
+
+.aside {
+  width: 100px;
+  height: 150px;
+  float: left;
+  background: #f66;
+}
+
+.main {
+  height: 200px;
+  background: #fcc;
 }
 </style>
