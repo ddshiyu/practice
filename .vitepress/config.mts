@@ -62,6 +62,7 @@ export default defineConfig({
           { text: 'githubActions', link: '/tools/githubActions.md' },
           { text: 'webviz', link: '/tools/webviz.md' },
           { text: '图床', link: '/tools/tuchaung.md' },
+          { text: '搜索技巧', link: '/tools/sousuo.md' },
         ]
       }],
       "/backend/": [{
@@ -93,6 +94,7 @@ export default defineConfig({
           { text: '数词', link: '/english/shuci.md' },
           { text: '连词', link: '/english/lianci.md' },
           { text: '副词', link: '/english/fuci.md' },
+          { text: '虚拟语气', link: '/english/xuniyuqi.md' },
         ]
       }],
     },
