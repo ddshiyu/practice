@@ -23,32 +23,33 @@ export default defineConfig({
       copyright: 'Copyright © 2019-present Wollfy Feng'
     },
     nav: [
-      { text: 'CSS', link: '/css/yuedu' },
-      { text: 'JavaScript', link: '/js/jicheng.md' },
-      { text: 'Tools', link: '/tools/index.md' },
+      { text: '前端', link: '/frontend/js/jicheng.md' },
       { text: '后端', link: '/backend/index.md' },
+      { text: '工具', link: '/tools/index.md' },
       { text: '经验教训', link: '/keng/vue3.md' },
       { text: '英语', link: '/english/index.md' },
     ],
 
     sidebar: {
-      "/css/": [{
-        text: 'CSS',
-        items: [
-          { text: '读css世界', link: '/css/yuedu' },
-          { text: 'css技巧', link: '/css/jiqiao' },
-          { text: 'svg', link: '/css/index' },
-          { text: '盒模型', link: '/css/hemoxing' },
-        ]
-      }],
-      "/js/": [{
-        text: 'JavaScript',
-        items: [
-          { text: 'js继承', link: '/js/jicheng.md' },
-          { text: 'TS相关', link: '/js/ts.md' },
-          { text: 'JS非常用方法', link: '/js/feichangyong.md' },
-        ]
-      }],
+      "frontend": [
+        {
+          text: 'CSS',
+          items: [
+            { text: '读css世界', link: '/frontend/css/yuedu' },
+            { text: 'css技巧', link: '/frontend/css/jiqiao' },
+            { text: 'svg', link: '/frontend/css/index' },
+            { text: '盒模型', link: '/frontend/css/hemoxing' },
+          ]
+        },
+        {
+          text: 'JavaScript',
+          items: [
+            { text: 'js继承', link: '/frontend/js/jicheng.md' },
+            { text: 'TS相关', link: '/frontend/js/ts.md' },
+            { text: 'JS非常用方法', link: '/frontend/js/feichangyong.md' },
+          ]
+        }
+      ],
       "/tools/": [{
         text: 'Tools',
         items: [
