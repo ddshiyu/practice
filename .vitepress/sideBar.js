@@ -21,9 +21,6 @@ function generateSidebarConfig(docsPath, link = '', index = 0) {
           sidebarConfig[`/${filename}/`] = [config];
         }
       } else {
-        if (index === 1) {
-          return
-        }
         if (!sidebarConfig.items) {
           sidebarConfig.items = [];
         }
