@@ -71,6 +71,7 @@ export default defineConfig({
         items: [
           { text: 'java基础', link: '/backend/index.md' },
           { text: 'Node.js', link: '/backend/node.md' },
+          { text: 'mongoDB', link: '/backend/mongo.md' },
         ]
       }],
       "/keng/": [{

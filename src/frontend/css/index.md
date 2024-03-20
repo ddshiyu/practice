@@ -51,7 +51,7 @@ Content-Encoding: gzip
 Vary: Accept-Encoding
 ```
 ## 三、坐标定位
-![image.png](/images/css/image3.png)
+![image.png](/images/frontend/image3.png)
 ```xml
 <rect x="0" y="0" width="100" height="100" />
 ```

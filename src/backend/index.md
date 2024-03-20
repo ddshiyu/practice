@@ -101,7 +101,7 @@ double │   │   │   │   │   │   │   │   │
 
 **特别注意：同一个数的不同进制的表示是完全相同的，例如15=0xf＝0b1111。**
 #### 浮点型
-```
+```java
 float f1 = 3.14f;
 float f2 = 3.14e38f; // 科学计数法表示的3.14x10^38
 double d = 1.79e308;
@@ -112,7 +112,7 @@ double d3 = 4.9e-324; // 科学计数法表示的4.9x10^-324
 尔类型`boolean`只有`true`和`false`两个值
 ##### 字符类型
 字符类型`char`表示一个字符。Java的`char`类型除了可表示标准的ASCII外，还可以表示一个`Unicode`字符
-```
+```java
 public class Main {
     public static void main(String[] args) {
         char a = 'A';
@@ -306,7 +306,7 @@ String s = "abc\"xyz"; // 包含7个字符: a, b, c, ", x, y, z,使用转义字�
 使用`+`连接任意字符串和其他数据类型，用`+`连接字符串和其他数据类型，会将其他数据类型先自动转型为字符串。
 #### 多行字符串
 字符串可以用`"""..."""`表示多行字符串。
-```
+```java
 public class Main {
     public static void main(String[] args) {
         String s = """
@@ -320,7 +320,7 @@ public class Main {
 }
 ```
 #### 不可变特性
-```
+```java
 public class Main {
     public static void main(String[] args) {
         String s = "hello";
@@ -349,7 +349,7 @@ public class Main {
 └───┴───────────┴───┴───────────┴───┘
 ```
 原来的字符串"hello"还在，只是我们无法通过变量s访问它而已。因此，字符串的不可变是指字符串内容不可变。至于变量，可以一会指向字符串"hello"，一会指向字符串"world"。
-```
+```java
 public class Main {
     public static void main(String[] args) {
         String s = "hello";
@@ -361,7 +361,7 @@ public class Main {
 ```
 引用类型的变量可以指向一个空值**null**，它表示不存在，即该变量不指向任何对象。
 ### 1.6 数组类型
-```
+```java
 public class Main {
     public static void main(String[] args) {
         // 5位同学的成绩:
@@ -386,7 +386,7 @@ public class Main {
 - 数组一旦创建后，大小就不可改变。
 - 索引超出范围，运行时将报错。
 #### 引用类型数组
-```
+```java
 String[] names = {
     "ABC", "XYZ", "zoo"
 };
@@ -418,7 +418,7 @@ String[] names = {
 这里注意到原来names[1]指向的字符串"XYZ"并没有改变，仅仅是将names[1]的引用从指向"XYZ"改成了指向"cat"，其结果是字符串"XYZ"再也无法通过names[1]访问到了。
 ### 1.7 输入和输出
 `println`是print line的缩写，表示输出并换行，否则用print()。
-```
+```java
 // 格式化输出
 public class Main {
     public static void main(String[] args) {
@@ -437,7 +437,7 @@ public class Main {
 | %s | 格式化字符串 |
 
 #### 输入
-```
+```java
 import java.util.Scanner; // 导入工具库
 
 public class Main {
@@ -456,7 +456,7 @@ public class Main {
 这块大部分语言都差不多。
 #### 浮点数比较
 浮点数在计算机中常常无法精确表示，并且计算可能出现误差，正确的方法是利用差值小于某个临界值。
-```
+```java
 public class Main {
     public static void main(String[] args) {
         double x = 1 - 9.0 / 10;
@@ -470,7 +470,7 @@ public class Main {
 ```
 #### 引用类型比较
 使用`==`不能比较引用类型，需要使用`equals`方法
-```
+```java
 public class Main {
     public static void main(String[] args) {
         String s1 = "hello";
@@ -557,7 +557,7 @@ Arrays.deepToString()，可以打印出多维数组。
 ## 二、面向对象编程
 ### 2.1 概念
 class是一种对象模版，它定义了如何创建实例，instance是对象实例，instance是根据class创建的实例。
-```
+```java
 // 创建类
 class Person {
     public String name;
@@ -576,7 +576,7 @@ hong.age = 15;
 ```
 ### 2.2 方法
 直接把`field`用`public`暴露给外部可能会破坏封装性
-```
+```java
 class Person {
     public String name;
     public int age;
@@ -587,7 +587,7 @@ ming.age = -99; // age设置为负数
 ```
 用`private`修饰`field`，直接修改这会报错。
 那么如何修改呢，可以**使用方法来修改**。
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Person ming = new Person();
@@ -619,7 +619,7 @@ class Person {
 `private` 方法也不允许外部调用，那么`private`的意义就是**内部调用**。
 #### 可变参数
 使用`类型...`可以定义可变参数。
-```
+```java
 class Group {
     private String[] names;
 
@@ -634,7 +634,7 @@ g.setNames("Xiao Ming"); // 传入1个String
 g.setNames(); 
 ```
 #### 参数绑定
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Person p = new Person();
@@ -659,7 +659,7 @@ class Person {
 }
 ```
 基本类型参数的传递，是调用方值的复制。双方各自的后续修改，互不影响。
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Person p = new Person();
@@ -684,7 +684,7 @@ class Person {
 }
 ```
 引用类型参数的传递，调用方的变量，和接收方的参数变量，指向的是同一个对象。双方任意一方对这个对象的修改，都会**影响对方**（因为指向同一个对象嘛）。
-```
+```java
 public class Main {
     public static void main(String[] args) {
         Person p = new Person();
@@ -709,3 +709,442 @@ class Person {
 }
 ```
 两次都返回Bob，这还是由于字符串的不可变性。
+
+### 2.3 构造方法
+```java
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person("Xiao Ming", 15);
+        System.out.println(p.getName());
+        System.out.println(p.getAge());
+    }
+}
+
+class Person {
+    private String name;
+    private int age;
+	// 构造方法
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public String getName() {
+        return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+}
+```
+构造方法的名称就是**类名**，**没有返回值。**
+#### 默认构造方法
+任何`class`**都有**构造方法，如果没有写构造方法，则编译器会默认生成一个构造方法。
+```java
+class Person {
+    public Person() {
+        // 也可以初始化的时候定义
+        private String name = "Unamed";
+    	private int age = 10;
+    }
+}
+```
+#### 多构造方法
+如果调用`new Person("Xiao Ming", 20)`;，会自动匹配到构造方法`public Person(String, int)`。
+如果调用`new Person("Xiao Ming")`;，会自动匹配到构造方法`public Person(String)`。
+如果调用`new Person()`;，会自动匹配到构造方法`public Person()`。
+一个构造方法可以调用其他构造方法，这样做的目的是便于代码复用。调用其他构造方法的语法是this(…)
+```java
+class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Person(String name) {
+        this(name, 18); // 调用另一个构造方法Person(String, int)
+    }
+
+    public Person() {
+        this("Unnamed"); // 调用另一个构造方法Person(String)
+    }
+}
+```
+### 2.3 方法重载
+```java
+class Hello {
+    public void hello() {
+        System.out.println("Hello, world!");
+    }
+
+    public void hello(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public void hello(String name, int age) {
+        if (age < 18) {
+            System.out.println("Hi, " + name + "!");
+        } else {
+            System.out.println("Hello, " + name + "!");
+        }
+    }
+}
+```
+这种方法名相同，但各自的参数不同，称为方法**重载。**目的是，功能类似的方法使用同一名字，更容易记住，比如：
+
+- `int indexOf(int ch)`：根据字符的Unicode码查找；
+- `int indexOf(String str)`：根据字符串查找；
+### 2.4 继承
+```java
+class Person {
+    private String name;
+    private int age;
+
+    public String getName() {...}
+    public void setName(String name) {...}
+    public int getAge() {...}
+    public void setAge(int age) {...}
+}
+```
+```java
+class Student {
+    private String name;
+    private int age;
+    private int score;
+
+    public String getName() {...}
+    public void setName(String name) {...}
+    public int getAge() {...}
+    public void setAge(int age) {...}
+    public int getScore() { … }
+    public void setScore(int score) { … }
+}
+```
+```java
+class Person {
+    private String name;
+    private int age;
+
+    public String getName() {...}
+    public void setName(String name) {...}
+    public int getAge() {...}
+    public void setAge(int age) {...}
+}
+
+class Student extends Person {
+    // 不要重复name和age字段/方法,
+    // 只需要定义新增score字段/方法:
+    private int score;
+
+    public int getScore() { … }
+    public void setScore(int score) { … }
+}
+```
+在OOP的术语中，我们把`Person`称为超类（super class），父类（parent class），基类（base class），把`Student`称为子类（subclass），扩展类（extended class）。
+没有明确写`extends`的类，编译器会自动加上`extends **Object**`。
+Java只允许一个class继承自一个类，因此，一个类有且仅有一个父类。
+#### protected
+子类无法访问父类的`private`字段或者`private`方法，需要把`private`改为`protected`。
+```java
+class Person {
+    protected String name;
+    protected int age;
+}
+
+class Student extends Person {
+    public String hello() {
+        return "Hello, " + name; // OK!
+    }
+}
+```
+#### super
+`super`关键字表示父类。
+```java
+class Student extends Person {
+    public String hello() {
+        return "Hello, " + super.name;
+    }
+}
+```
+如果父类没有默认的构造方法，子类就必须显式调用`super()`并给出参数以便让编译器定位到父类的一个合适的构造方法。
+任何class的构造方法，第一行语句必须是调用父类的构造方法。如果没有明确地调用父类的构造方法，编译器会帮我们**自动**加一句`super()`;
+```java
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("Xiao Ming", 12, 89);
+    }
+}
+class Person {
+    protected String name;
+    protected int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+class Student extends Person {
+    protected int score;
+    public Student(String name, int age, int score) {
+        this.score = score;
+    }
+}
+```
+```java
+class Student extends Person {
+    protected int score;
+
+    public Student(String name, int age, int score) {
+        super(); // 自动调用父类的构造方法
+        this.score = score;
+    }
+}
+```
+`Person`类并没有无参数的构造方法，因此，编译失败。
+```java
+class Student extends Person {
+    protected int score;
+
+    public Student(String name, int age, int score) {
+        super(name, age); // 调用父类的构造方法Person(String, int)
+        this.score = score;
+    }
+}
+```
+#### 阻止继承
+class没有`**final**`修饰符，那么任何类都可以从该class继承，但是也可以指定。
+```java
+public sealed class Shape permits Rect, Circle, Triangle {
+    ...
+}
+```
+上述`Shape`类就是一个`sealed`类，它只允许指定的3个类继承它。
+```java
+public final class Ellipse extends Shape {...}
+```
+这样会报错，因为没有继承列表中。
+#### 向上转型
+把一个子类类型安全地变为父类类型的赋值，被称为向上转型。
+```java
+Student s = new Student();
+Person p = new Person();
+// 引用类型为Person的变量，指向Student类型的实例
+Person p = new Student();
+
+Student s = new Student();
+Person p = s; // upcasting, ok
+Object o1 = p; // upcasting, ok
+Object o2 = s; // upcasting, ok
+```
+#### 向下转型
+把一个父类类型强制转型为子类类型，就是向下转型。
+```java
+Person p1 = new Student(); // upcasting, ok
+Person p2 = new Person();
+Student s1 = (Student) p1; // ok
+Student s2 = (Student) p2; // runtime error! ClassCastException!
+```
+把父类变为子类会报错，因为子类功能比父类多。
+为了避免向下转型出错，Java提供了`instanceof`操作符，可以先判断一个实例究竟是不是某种类型：
+```java
+Person p = new Person();
+System.out.println(p instanceof Person); // true
+System.out.println(p instanceof Student); // false
+
+Student s = new Student();
+System.out.println(s instanceof Person); // true
+System.out.println(s instanceof Student); // true
+
+Student n = null;
+System.out.println(n instanceof Student); // false
+```
+可以先判断在进行强制转型。
+```java
+public class Main {
+    public static void main(String[] args) {
+        Object obj = "hello";
+        if (obj instanceof String s) {
+            // 可以直接使用变量s:
+            System.out.println(s.toUpperCase());
+        }
+    }
+}
+```
+### 2.5 多态
+在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。
+```java
+class Person {
+    public void run() {
+        System.out.println("Person.run");
+    }
+}
+```
+```java
+class Student extends Person {
+    @Override
+    public void run() {
+        System.out.println("Student.run");
+    }
+    // 不是Override，因为参数不同:
+    public void run(String s) { … }
+    // 不是Override，因为返回值不同:
+    public int run() { … }
+}
+```
+加上@Override可以让编译器帮助检查是否进行了正确的覆写。
+Java的实例方法调用是基于**运行时**的实际类型的动态调用，而非变量的声明类型，这称为多态。
+```java
+public class Main {
+    public static void main(String[] args) {
+        // 给一个有普通收入、工资收入和享受国务院特殊津贴的小伙伴算税:
+        Income[] incomes = new Income[] {
+            new Income(3000),
+            new Salary(7500),
+            new StateCouncilSpecialAllowance(15000)
+        };
+        System.out.println(totalTax(incomes));
+    }
+
+    public static double totalTax(Income... incomes) {
+        double total = 0;
+        for (Income income: incomes) {
+            total = total + income.getTax();
+        }
+        return total;
+    }
+}
+
+class Income {
+    protected double income;
+
+    public Income(double income) {
+        this.income = income;
+    }
+
+    public double getTax() {
+        return income * 0.1; // 税率10%
+    }
+}
+
+class Salary extends Income {
+    public Salary(double income) {
+        super(income);
+    }
+
+    @Override
+    public double getTax() {
+        if (income <= 5000) {
+            return 0;
+        }
+        return (income - 5000) * 0.2;
+    }
+}
+
+class StateCouncilSpecialAllowance extends Income {
+    public StateCouncilSpecialAllowance(double income) {
+        super(income);
+    }
+
+    @Override
+    public double getTax() {
+        return 0;
+    }
+}
+
+```
+#### 调用super
+```java
+class Person {
+    protected String name;
+    public String hello() {
+        return "Hello, " + name;
+    }
+}
+
+class Student extends Person {
+    @Override
+    public String hello() {
+        // 调用父类的hello()方法:
+        return super.hello() + "!";
+    }
+}
+```
+#### final
+用`final`修饰的**方法**不能被`Override`。
+```java
+class Person {
+    protected String name;
+    public final String hello() {
+        return "Hello, " + name;
+    }
+}
+
+class Student extends Person {
+    // compile error: 不允许覆写
+    @Override
+    public String hello() {
+    }
+}
+```
+用`final`修饰的**类**不能被继承。
+```java
+final class Person {
+    protected String name;
+}
+
+// compile error: 不允许继承自Person
+class Student extends Person {
+}
+```
+用`final`修饰的字段不能修改。
+```java
+class Person {
+    // 不能修改
+    public final String name;
+    public Person(String name) {
+        this.name = name;
+    }
+}
+```
+### 2.6 抽象类
+如果父类的方法本身**不需要实现任何功能**，仅仅是为了定义方法签名，目的是让子类去**覆写**它，那么，可以把父类的方法声明为抽象方法：
+```java
+// 类也必须什么abstract才能正确编译它
+abstract class Person {
+    public abstract void run();
+}
+```
+使用`abstract`修饰的类就是抽象类。我们**无法实例化**一个抽象类。
+抽象类可以强迫子类实现其定义的抽象方法，否则编译会报错。
+```java
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Student();
+        p.run();
+    }
+}
+
+abstract class Person {
+    public abstract void run();
+}
+
+class Student extends Person {
+    @Override
+    public void run() {
+        System.out.println("Student.run");
+    }
+}
+
+```
+### 2.7 接口
+在抽象类中，抽象方法本质上是定义接口规范：即规定**高层类**的接口，从而保证所有子类都有相同的接口实现，这样，多态就能发挥出威力。
+在Java中，使用interface可以声明一个接口：
+```java
+interface Person {
+    void run();
+    String getName();
+}
+```
