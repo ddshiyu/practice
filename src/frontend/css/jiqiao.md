@@ -17,7 +17,6 @@
 ![image.png](/images/frontend/image.png)
 默认样式
 ![image.png](/images/frontend/image2.png)
-<!-- ![](https://blog.jdqiong.cn/202203041315243.jpg) -->
 
 - mask	加载图片
 - mask-size	设置蒙版大小

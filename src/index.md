@@ -14,7 +14,7 @@ hero:
       text: 关于我
       link: https://read.jdqiong.cn/about
   # image:
-  #   src: https://blog.jdqiong.cn/weblogo.png
+  #   src:
   #   alt: VitePress
 features:
   - title: 无穷
