@@ -12,7 +12,6 @@ function generateSidebarConfig(docsPath, link = '', index = 0) {
     if (filename.startsWith(".")) return;
     const filepath = path.join(docsPath, filename);
     const stat = fs.statSync(filepath);
-    console.log(filepath)
     // 如果是文件夹，则递归生成子级 sidebar 配置
     if (stat.isDirectory() && filename !== 'images') {
       if (index === 0) {
@@ -20,6 +19,18 @@ function generateSidebarConfig(docsPath, link = '', index = 0) {
         if (!sidebarConfig[`/${filename}/`]) {
           sidebarConfig[`/${filename}/`] = [config];
         }
+      } else if (index === 1) {
+        console.log(filename)
+        console.log(filepath)
+        console.log(path.basename(path.dirname(filepath)))
+        console.log(sidebarConfig)
+        if (!sidebarConfig[`/${path.basename(path.dirname(filepath))}/`]) {
+          sidebarConfig[`/${path.basename(path.dirname(filepath))}/`] = [];
+        }
+        sidebarConfig[`/${path.basename(path.dirname(filepath))}/`].push({
+          text: filename,
+          items: generateSidebarConfig(filepath, `${link}${filename}/`, index + 1)
+        })
       } else {
         if (!sidebarConfig.items) {
           sidebarConfig.items = [];
@@ -33,7 +44,6 @@ function generateSidebarConfig(docsPath, link = '', index = 0) {
         const menuPath = path.dirname(filepath);
         const menuName = path.basename(menuPath);
         if (index === 2) {
-          console.log()
           sidebarConfig.text = menuName;
         } else {
           sidebarConfig.text = menuName;

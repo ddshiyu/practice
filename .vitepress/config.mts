@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
 import sidebarConfig from './sideBar'
+import AutoNav from "vite-plugin-vitepress-auto-nav"
 console.log(JSON.stringify(sidebarConfig))
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
   vite: {
     plugins: [
       UnoCSS(),
+      AutoNav()
     ],
   },
   themeConfig: {
@@ -24,14 +26,14 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Wollfy Feng'
     },
-    nav: [
-      { text: '前端', link: '/frontend/js/jicheng.md' },
-      { text: '后端', link: '/backend/java.md' },
-      { text: '工具', link: '/tools/index.md' },
-      { text: '经验教训', link: '/keng/vue3.md' },
-      { text: '英语', link: '/english/index.md' },
-    ],
-    sidebar: sidebarConfig,
+    // nav: [
+    //   { text: '前端', link: '/frontend/js/jicheng.md' },
+    //   { text: '后端', link: '/backend/java.md' },
+    //   { text: '工具', link: '/tools/index.md' },
+    //   { text: '经验教训', link: '/keng/vue3.md' },
+    //   { text: '英语', link: '/english/index.md' },
+    // ],
+    // sidebar: sidebarConfig,
     // sidebar: {
     //   "frontend": [
     //     {
