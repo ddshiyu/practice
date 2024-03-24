@@ -2,8 +2,8 @@
 ## 一、mask
 ```css
 .masked {
-  -webkit-mask: url('https://blog.jdqiong.cn/grooming-1801287.svg');
-  mask: url('https://blog.jdqiong.cn/grooming-1801287.svg');
+  -webkit-mask: url('/images/frontend/grooming-1801287.svg/grooming-1801287.svg');
+  mask: url('/images/frontend/grooming-1801287.svg');
   -webkit-mask-size: 100%;
   mask-size: 50%;
   width: 1200px;
