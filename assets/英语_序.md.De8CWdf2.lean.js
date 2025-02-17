@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as s,aq as r}from"./chunks/framework.Dy63JtQX.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"英语/序.md","filePath":"英语/序.md","lastUpdated":1739759111000}'),e={name:"英语/序.md"},n=r("",3),p=[n];function _(i,a,l,c,d,g){return s(),o("div",null,p)}const h=t(e,[["render",_]]);export{f as __pageData,h as default};
