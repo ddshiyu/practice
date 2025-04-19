@@ -7,7 +7,7 @@ console.log(JSON.stringify(sidebarConfig))
 export default defineConfig({
   title: "我的知识行囊",
   description: "A VitePress Site",
-  base: '/practice/',
+  base: '/',
   srcDir: './src',
   lastUpdated: true,
   vite: {
